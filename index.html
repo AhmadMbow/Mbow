@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I2SN - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #1a1a1a; /* Gris foncé */
+            color: #fff;
+            padding: 10px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff6600; /* Rouge pour les liens au survol */
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ff6600, #e65c00); /* Dégradé entre deux tons de rouge */
+            color: #fff;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hero:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-content h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero .btn {
+            text-decoration: none;
+            background-color: #fff;
+            color: #ff6600;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #ff6600;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Section Programs */
+        .programs {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .programs h3 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .program-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card h4 {
+            font-size: 1.6em;
+            color: #ff6600;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .program-card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .program-card .btn-secondary {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .program-card .btn-secondary:hover {
+            background-color: #e65c00;
+        }
+
+        /* Section About */
+        .about {
+            background: linear-gradient(135deg, #ff6600, #e65c00);
+            color: #fff;
+            padding: 50px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about:hover {
+            transform: scale(1.02);
+        }
+
+        .about h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .about .btn-highlight {
+            text-decoration: none;
+            background-color: #fff;
+            color: #ff6600;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .about .btn-highlight:hover {
+            background-color: #f1f1f1;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .footer-content p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .footer-content .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-content .social-icons a img {
+            width: 24px;
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+
+        .footer-content .social-icons a img:hover {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+             0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Institut des sciences SOULEYMANE NIANG</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="metiers.html">Recherche & Métiers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bienvenue à I2SN</h2>
+                <p>Découvrez nos offres de formation en recherche & métiers pour un avenir prometteur.</p>
+                <a href="formations.html" class="btn">Explorer les formations</a>
+            </div>
+            <img src="School.png" alt="Illustration de l'institution I2SN" class="hero-image">
+        </section>
+
+        <!-- Programmes -->
+        <section class="programs">
+            <h3>Nos Programmes en Bref</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4>Licences MPCI</h4>
+                    <p>Formations en Mathématiques, Physique, Chimie et Informatique.</p>
+                    <a href="licence-mpci.html" class="btn-secondary">En savoir plus</a>
+                </div>
+                <div class="program-card">
+                    <h4>Licence en Informatique</h4>
+                    <p>Formation avancée en programmation et développement.</p>
+                    <a href="licence-informatique.html" class="btn-secondary">En savoir plus</a>
+                </div>
+                <div class="program-card">
+                    <h4>Licence en Sciences des Données</h4>
+                    <p>Analyse de données et gestion des systèmes.</p>
+                    <a href="licence-sciences-des-donnees.html" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h3>À Propos de Nous</h3>
+            <p>Notre mission est de former les futurs leaders dans les domaines scientifiques et techniques pour répondre aux défis actuels.</p>
+            <a href="metiers.html" class="btn-highlight">En savoir plus</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 I2SN. Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

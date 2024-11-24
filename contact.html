@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - I2SN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px 30px; /* Réduit la hauteur du header */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section de contact */
+        main {
+            padding: 60px 20px;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(135deg, #ff6600, #ff9966);
+            color: #fff;
+            padding: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 40px auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .contact-section h2 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Animation fadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contact Info */
+        .contact-info {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-info ul li strong {
+            color: #007bff;
+        }
+
+        .contact-info ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-info ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Formulaire de contact */
+        .contact-form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff6600;
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
+        }
+
+        .contact-form .btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .contact-form .btn:hover {
+            background-color: #e65c00;
+            transform: translateY(-3px);
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icons a img:hover {
+            opacity: 1;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .form-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête de la page -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Institut des sciences SOULEYMANE NIANG</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="metiers.html">Métiers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Section de contact -->
+    <main>
+        <section class="contact-section">
+            <h2>Contactez-nous</h2>
+            <p>Pour toute question ou information, n'hésitez pas à nous joindre directement par téléphone, email ou via le formulaire ci-dessous :</p>
+            
+            <div class="contact-info">
+                <ul>
+                    <li><strong>Téléphone :</strong> 787032626 / 787032424 / 776486177</li>
+                    <li><strong>Email :</strong> <a href="mailto:bbmbow@gmail.com">bbmbow@gmail.com</a></li>
+                    <li><strong>Adresse :</strong> Cite Mourtada 2- VDN OUEST FOIRE- Lot 18,Dakar </li>
+                </ul>
+            </div>
+
+            <h3>Formulaire de Contact</h3>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message ici..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 I2SN. Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+</body>
+</html>
