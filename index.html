@@ -76,7 +76,48 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
+/* Effets pour les images */
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
 
+/* Effet de zoom au survol des images */
+.hero img:hover {
+    transform: scale(1.05); /* Zoom léger */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Effet de filtre pour les images */
+.hero img {
+    filter: brightness(90%) contrast(110%); /* Réduit la luminosité et augmente le contraste */
+    transition: filter 0.3s ease;
+}
+
+/* Lors du survol de l'image, on ajuste le filtre pour la rendre plus vive */
+.hero img:hover {
+    filter: brightness(100%) contrast(120%); /* Image plus lumineuse et contrastée */
+}
+
+/* Nouvelle classe pour l'image de la deuxième image avec effets supplémentaires */
+.hero img.second-image {
+    width: 70%; /* Diminue la taille de l'image */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus */
+    margin-bottom: 20px; /* Ajoute de l'espace en bas */
+    border-radius: 15px; /* Bordure arrondie plus marquée */
+    filter: grayscale(30%); /* Grayscale léger pour un effet doux */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de zoom et de luminosité au survol pour la deuxième image */
+.hero img.second-image:hover {
+    transform: scale(1.1); /* Zoom pour la deuxième image */
+    filter: grayscale(0%) brightness(110%); /* Rendre l'image colorée et plus lumineuse */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Ombre plus nette */
+}
         .hero:hover {
             transform: scale(1.02);
         }
@@ -115,6 +156,13 @@
             background-color: #ff6600;
             color: #fff;
             transform: translateY(-3px);
+        }
+
+        /* Nouvelle classe pour la deuxième image */
+        .hero img.second-image {
+            width: 70%; /* Diminue la taille de l'image */
+            margin-top: 20px; /* Ajoute de l'espace au-dessus */
+            margin-bottom: 20px; /* Ajoute de l'espace en bas */
         }
 
         /* Section Programs */
@@ -294,8 +342,11 @@
 <body>
     <header>
         <div class="container">
+            <!-- Logo ajouté ici -->
             <div class="logo">
-                <h1>Institut des sciences SOULEYMANE NIANG</h1>
+                <img src="logo.webp" alt="Logo I2SN" id="logo" style="max-width: 150px;">
+            </div>
+                <h1>Institut des sciences SOULEYMANE NIANG (I2SN)</h1>
             </div>
             <nav>
                 <ul>
@@ -316,7 +367,8 @@
                 <p>Découvrez nos offres de formation en recherche & métiers pour un avenir prometteur.</p>
                 <a href="formations.html" class="btn">Explorer les formations</a>
             </div>
-            <img src="School.png" alt="Illustration de l'institution I2SN" class="hero-image">
+            <!-- Images qui vont changer -->
+            <img src="School.png" alt="Illustration de l'institution I2SN" class="hero-image" id="hero-image">
         </section>
 
         <!-- Programmes -->
@@ -353,11 +405,30 @@
         <div class="footer-content">
             <p>&copy; 2024 I2SN. Tous droits réservés.</p>
             <div class="social-icons">
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://web.facebook.com/?locale=fr_FR&_rdc=1&_rdr"><img src="facebook-icon.png" alt="Facebook"></a>
                 <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
                 <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // JavaScript pour changer l'image toutes les 5 secondes
+        const images = ["School.png", "School4.jpeg", "School2.jpeg"];
+        let currentIndex = 0;
+        const imageElement = document.getElementById("hero-image");
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageElement.src = images[currentIndex];
+            if (currentIndex === 1) { // Si c'est la 2e image
+                imageElement.classList.add("second-image");
+            } else {
+                imageElement.classList.remove("second-image");
+            }
+        }
+
+        setInterval(changeImage, 5000); // Change d'image toutes les 5 secondes
+    </script>
 </body>
 </html>
