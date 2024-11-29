@@ -339,61 +339,71 @@
             }
         }
         /* Styles pour les écrans de moins de 768px */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+ @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    nav ul {
-        flex-direction: column;
-        margin-top: 20px;
-    }
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+            nav ul li {
+                margin: 10px 0;
+            }
 
-    .hero {
-        grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
-        text-align: center;
-        padding: 40px 20px;
-    }
+            .hero {
+                grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+                text-align: center;
+                padding: 40px 20px;
+            }
 
-    .hero-content h2 {
-        font-size: 2em; /* Réduction de la taille du texte */
-    }
+            .hero-content h2 {
+                font-size: 2em; /* Réduction de la taille du texte */
+            }
 
-    .hero-content p {
-        font-size: 1.2em;
-    }
+            .hero-content p {
+                font-size: 1.2em;
+            }
 
-    .programs-grid {
-        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
-    }
+            .programs-grid {
+                grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+            }
 
-    .program-card {
-        padding: 15px;
-    }
+            .program-card {
+                padding: 15px;
+            }
 
-    .about {
-        padding: 20px;
-        text-align: center;
-    }
+            .about {
+                padding: 20px;
+                text-align: center;
+            }
 
-    footer {
-        padding: 10px 0;
-    }
+            footer {
+                padding: 10px 0;
+            }
 
-    .footer-content .social-icons a img {
-        width: 20px; /* Réduction de la taille des icônes */
-    }
-}
+            .footer-content .social-icons a img {
+                width: 20px; /* Réduction de la taille des icônes */
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
 
     </style>
