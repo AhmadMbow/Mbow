@@ -3,17 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I2SN - Découvrir Toutes Nos Licences</title>
+    <title>Licence en Sciences des Données - I2SN</title>
     <link rel="icon" href="logo.webp">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6600, #ff9966); /* Dégradé orange */
+            color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-button {
+            display: none; /* Cacher par défaut */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            text-decoration: none;
+        }
+
+        /* Section principale */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .programme-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .programme-header h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ff6600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .programme-header p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: inside disc;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Liens et boutons */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        /* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+  
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none; /* Cacher par défaut */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a1a1a;
+        position: fixed; /* Utilisation de position fixe */
+        top: 60px; /* Positionnement sous le header */
+        left: 0;
+        padding: 20px 0;
+        z-index: 100; /* Assurez-vous que le menu est au-dessus des autres éléments */
+    }
+
+    nav ul.active {
+        display: flex; /* Affichage du menu */
+        animation: slideIn 0.3s ease-in-out; /* Animation du menu */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        font-size: 1.2em;
+        text-align: center; /* Centrer les liens */
+    }
+
+    /* Afficher le bouton menu sur les petits écrans */
+    .menu-button {
+        display: block; /* Afficher sur mobile */
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px; /* Taille similaire aux liens de navigation */
+        border: none;
+        font-size: 1.2em; /* Correspond au texte des liens */
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    .menu-button:focus {
+        outline: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2em; /* Réduction de la taille du texte */
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+    }
+
+    .program-card {
+        padding: 15px;
+    }
+
+    .about {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .footer-content .social-icons a img {
+        width: 20px; /* Réduction de la taille des icônes */
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+    </style>
 </head>
 <body>
-    <!-- Header avec logo et navigation -->
+    <!-- En-tête de la page -->
     <header>
         <div class="container">
             <div class="logo">
                 <img src="logo.webp" alt="Logo I2SN" id="logo" style="max-width: 200px; border-radius: 200px;">
             </div>
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
                 <h1>Institut Des Sciences SOULEYMANE NIANG (I2SN)</h1>
             </div>
             <nav>
@@ -27,198 +275,70 @@
         </div>
     </header>
 
-    <!-- Section principale -->
     <main>
-        <section class="intro">
-            <div class="container">
-                <h2>Découvrez Toutes Nos Licences</h2>
-                <p>Explorez nos programmes de licence conçus pour former des experts dans des domaines stratégiques et porteurs d'avenir. Chaque programme offre un équilibre parfait entre théorie et pratique pour répondre aux besoins du marché du travail et de la recherche.</p>
-            </div>
+        <!-- Section de présentation du programme -->
+        <section class="programme-header">
+            <h2>Licence en Sciences des Données</h2>
+            <p>Une formation spécialisée pour former des experts en analyse, gestion et visualisation de données dans un monde numérique en expansion.</p>
         </section>
 
-        <!-- Section des Licences -->
-        <section class="licenses">
-            <div class="container">
-                <div class="license">
-                    <h3>Énergies renouvelables</h3>
-                    <p>Une licence axée sur les énergies durables, telles que l'énergie solaire, éolienne et hydraulique, avec une formation pratique pour innover dans un monde respectueux de l'environnement.</p>
-                </div>
-                <div class="license">
-                    <h3>Instrumentation - Mesures et Contrôle Qualité</h3>
-                    <p>Ce programme se concentre sur l'utilisation des outils de mesure et d'analyse, garantissant la qualité et la fiabilité dans divers secteurs industriels.</p>
-                </div>
-                <div class="license">
-                    <h3>Électronique, Télécommunications et Systèmes Embarqués</h3>
-                    <p>Une formation pointue en électronique et en communication pour concevoir des systèmes intelligents, des appareils connectés et des technologies modernes.</p>
-                </div>
-                <div class="license">
-                    <h3>Instrumentation Hospitalière et Ingénierie Biomédicale</h3>
-                    <p>Prépare les étudiants à concevoir et à maintenir des équipements médicaux sophistiqués pour répondre aux besoins des systèmes de santé modernes.</p>
-                </div>
-            </div>
+        <!-- Détails du programme -->
+        <section class="programme-details">
+            <h3>Présentation du Programme</h3>
+            <p>La Licence en Sciences des Données vise à former des professionnels capables de manipuler, analyser et interpréter des volumes de données massifs pour en extraire des informations pertinentes. Ce programme couvre les fondements mathématiques et statistiques ainsi que les outils modernes de traitement des données, incluant l’apprentissage automatique et la visualisation de données.</p>
+
+            <h3>Objectifs de la Formation</h3>
+            <ul>
+                <li>Acquérir des compétences en analyse de données et en statistique appliquée.</li>
+                <li>Maîtriser les outils de programmation pour la manipulation de données (Python, R).</li>
+                <li>Comprendre les principes de l'apprentissage automatique et de l'intelligence artificielle.</li>
+                <li>Savoir présenter et interpréter des données via des outils de visualisation avancée.</li>
+            </ul>
         </section>
 
-        <!-- Appel à l'action -->
-        <section class="cta">
-            <div class="container">
-                <p>Prêt à bâtir un avenir prometteur ? Rejoignez l'une de nos licences dès aujourd'hui.</p>
-                <a href="contact.html" class="btn">Contactez-nous pour en savoir plus</a>
-            </div>
+        <!-- Modules de la formation -->
+        <section class="programme-modules">
+            <h3>Modules de la Formation</h3>
+            <ul>
+                <li><strong>Statistiques et Probabilités :</strong> Théorie des probabilités, inférence statistique, statistiques descriptives et avancées.</li>
+                <li><strong>Programmation pour les Données :</strong> Python, R, manipulation et transformation de données.</li>
+                <li><strong>Apprentissage Automatique :</strong> Méthodes supervisées et non supervisées, réseaux de neurones, analyse de données.</li>
+                <li><strong>Visualisation de Données :</strong> Tableau, matplotlib, D3.js, outils de présentation visuelle de données.</li>
+            </ul>
+        </section>
+
+        <!-- Débouchés et Opportunités -->
+        <section class="programme-opportunites">
+            <h3>Débouchés et Opportunités</h3>
+            <ul>
+                <li>Data Scientist, Data Analyst.</li>
+                <li>Ingénieur en apprentissage automatique.</li>
+                <li>Consultant en gestion de données.</li>
+                <li>Analyste en intelligence d'affaires (Business Intelligence).</li>
+            </ul>
+        </section>
+
+        <!-- Conditions d'admission -->
+        <section class="programme-admission">
+            <h3>Conditions d'Admission</h3>
+            <ul>
+                <li>Baccalauréat scientifique avec un bon niveau en mathématiques et statistiques.</li>
+                <li>Intérêt pour les mathématiques, la programmation et l'analyse de données.</li>
+            </ul>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Pied de page -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 I2SN. Tous droits réservés.</p>
-            <div class="social-icons">
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-        </div>
+        <p>&copy; 2024 I2SN. Tous droits réservés.</p>
     </footer>
-
-    <!-- CSS -->
-    <style>
-        /* Styles globaux */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+    <script>
+        // Fonction pour activer/désactiver le menu de navigation
+                 
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("active");
         }
-        body {
-            background-color: #f8f9fa;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 20px 40px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        nav ul li a:hover {
-            background-color: #333;
-        }
-
-        /* Section intro */
-        .intro {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #eaf4fc;
-            margin-bottom: 40px;
-        }
-        .intro h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .intro p {
-            font-size: 1.2em;
-            color: #555;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        /* Licenses */
-        .licenses {
-            background-color: #fff;
-            padding: 40px 20px;
-            margin-bottom: 40px;
-        }
-        .licenses .license {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .licenses .license h3 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #007bff;
-        }
-        .licenses .license p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* CTA */
-        .cta {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 8px;
-        }
-        .cta p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .cta .btn {
-            text-decoration: none;
-            background-color: #fff;
-            color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .cta .btn:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        .footer-content p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-        .social-icons a img {
-            width: 24px;
-            margin: 0 10px;
-            opacity: 0.8;
-        }
-        .social-icons a img:hover {
-            opacity: 1;
-        }
-    </style>
+    </script>
 </body>
 </html>
