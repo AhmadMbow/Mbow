@@ -339,7 +339,112 @@
                 transform: translateY(-10px);
             }
         }
-        /* Styles pour les écrans de moins de 768px */
+        @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img.second-image {
+        width: 100%; /* Prend toute la largeur disponible */
+        height: auto; /* Laisse la hauteur s'adapter proportionnellement */
+        margin-top: 10px; /* Réduit l'espace au-dessus */
+        margin-bottom: 10px; /* Réduit l'espace en bas */
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Réajustement de la barre de navigation */
+    nav ul {
+        display: none; /* Cacher par défaut */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a1a1a;
+        position: fixed; /* Utilisation de position fixe */
+        top: 60px; /* Positionnement sous le header */
+        left: 0;
+        padding: 20px 0;
+        z-index: 100; /* Assurez-vous que le menu est au-dessus des autres éléments */
+    }
+
+    /* Afficher le menu quand la classe active est ajoutée */
+    nav ul.active {
+        display: flex; /* Affichage du menu */
+        animation: slideIn 0.3s ease-in-out; /* Animation du menu */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        font-size: 1.2em;
+        text-align: center; /* Centrer les liens */
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+    }
+
+    .hero {
+        grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2em; /* Réduction de la taille du texte */
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+    }
+
+    .program-card {
+        padding: 15px;
+    }
+
+    .about {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .footer-content .social-icons a img {
+        width: 20px; /* Réduction de la taille des icônes */
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }        /* Styles pour les écrans de moins de 768px */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -430,6 +535,8 @@
 }
 }
 
+}
+
 
 
     </style>
@@ -440,6 +547,15 @@
             <!--Logo--> 
             <div class="logo">
                 <img src="logo.webp" alt="Logo I2SN" id="logo" style="max-width: 200px; border-radius: 200px;">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>  <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+                <span></span>
+                <span></span>
             </div>
                 <h1>Institut Des Sciences SOULEYMANE NIANG (I2SN)</h1>
             </div>
@@ -527,6 +643,11 @@ Contact
         }
 
         setInterval(changeImage, 5000); // Change d'image toutes les 5 secondes
+        function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+}
+
     </script>
 </body>
 </html>
