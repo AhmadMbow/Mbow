@@ -33,6 +33,9 @@ header .logo h1 {
     margin: 0;
     font-size: 20px; /* Réduit la taille du titre */
 }
+        .menu-button {
+            display: none; /* Cacher par défaut */
+           }
 
         .container {
             max-width: 1200px;
@@ -249,6 +252,111 @@ header .logo h1 {
                 grid-template-columns: 1fr;
             }
         }
+        /* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+  
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none; /* Cacher par défaut */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a1a1a;
+        position: fixed; /* Utilisation de position fixe */
+        top: 60px; /* Positionnement sous le header */
+        left: 0;
+        padding: 20px 0;
+        z-index: 100; /* Assurez-vous que le menu est au-dessus des autres éléments */
+    }
+
+    nav ul.active {
+        display: flex; /* Affichage du menu */
+        animation: slideIn 0.3s ease-in-out; /* Animation du menu */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        font-size: 1.2em;
+        text-align: center; /* Centrer les liens */
+    }
+
+    /* Afficher le bouton menu sur les petits écrans */
+    .menu-button {
+        display: block; /* Afficher sur mobile */
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px; /* Taille similaire aux liens de navigation */
+        border: none;
+        font-size: 1.2em; /* Correspond au texte des liens */
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    .menu-button:focus {
+        outline: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2em; /* Réduction de la taille du texte */
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+    }
+
+    .program-card {
+        padding: 15px;
+    }
+
+    .about {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .footer-content .social-icons a img {
+        width: 20px; /* Réduction de la taille des icônes */
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
     </style>
 </head>
 <body>
@@ -258,6 +366,7 @@ header .logo h1 {
             <div class="logo">
                 <img src="logo.webp" alt="Logo I2SN" id="logo" style="max-width: 200px; border-radius: 200px;">
             </div>
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
                 <h1>Institut Des Sciences SOULEYMANE NIANG (I2SN)</h1>
             </div>
             <nav>
@@ -267,7 +376,9 @@ header .logo h1 {
                     <li><a href="metiers.html">Métiers</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </nav>
+            </nav>     
+
+
         </div>
     </header>
     
@@ -321,5 +432,13 @@ header .logo h1 {
             <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
     </footer>
+    <script>
+        // Fonction pour activer/désactiver le menu de navigation
+                 
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
