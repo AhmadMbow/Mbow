@@ -645,10 +645,7 @@
         const imageElement = document.getElementById("hero-image");
 
         function changeImage() {
-Formations
-Métiers
-Contact
-            currentIndex = (currentIndex + 1) % images.length;
+           currentIndex = (currentIndex + 1) % images.length;
             imageElement.src = images[currentIndex];
             if (currentIndex === 1) { // Si c'est la 2e image
                 imageElement.classList.add("second-image");
