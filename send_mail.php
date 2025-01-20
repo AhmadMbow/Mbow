@@ -1,40 +1,48 @@
 <?php
-// Vérifier si le formulaire est soumis
+// Inclure PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Charger l'autoloader de Composer
+require 'vendor/autoload.php';
+
+// Afficher les erreurs pour le débogage
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupérer les données du formulaire
     $name = htmlspecialchars(trim($_POST["name"]));
     $email = htmlspecialchars(trim($_POST["email"]));
     $message = htmlspecialchars(trim($_POST["message"]));
 
-    // Adresse email de destination
-    $to = "ahmadoulebeau@gmail.com"; // Remplacez par votre email de réception
+    // Créer une instance de PHPMailer
+    $mail = new PHPMailer(true);
 
-    // Sujet de l'email
-    $subject = "Nouveau message de $name via le formulaire de contact";
+    try {
+        // Configurer le serveur SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';  // Serveur SMTP de Gmail
+        $mail->SMTPAuth = true;
+        $mail->Username = 'papaahmadmbow@gmail.com';  // Remplacez par votre adresse Gmail
+        $mail->Password = 'TATA2TAT@';   // Remplacez par votre mot de passe spécifique à l'application Gmail
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;  // Port SMTP pour Gmail
 
-    // Contenu de l'email
-    $emailBody = "
-    Vous avez reçu un nouveau message depuis le formulaire de contact :
-    
-    Nom : $name
-    Email : $email
+        // Destinataire
+        $mail->setFrom('papaahmadmbow@gmail.com', 'Nom'); // Utilisez votre adresse Gmail ici
+        $mail->addAddress('ahmadoulebeau@gmail.com');  // Adresse de destination
 
-    Message :
-    $message
-    ";
+        // Contenu de l'email
+        $mail->isHTML(false);  // Utiliser le format texte brut
+        $mail->Subject = 'Nouveau message de contact';
+        $mail->Body    = "Nom : $name\nEmail : $email\nMessage : $message";
 
-    // Entêtes de l'email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-    // Envoyer l'email
-    if (mail($to, $subject, $emailBody, $headers)) {
-        echo "Merci ! Votre message a été envoyé avec succès.";
-    } else {
-        echo "Une erreur s'est produite. Veuillez réessayer.";
+        // Envoyer l'email
+        $mail->send();
+        echo 'L\'email a été envoyé avec succès.';
+    } catch (Exception $e) {
+        echo "L'envoi de l'email a échoué. Erreur: {$mail->ErrorInfo}";
     }
-} else {
-    echo "Méthode non autorisée.";
 }
 ?>
