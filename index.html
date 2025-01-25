@@ -57,18 +57,18 @@
         }
 
         nav ul li a:hover {
-            background-color: #ff6600; /* Rouge pour les liens au survol */
+            background-color: #ff6600; 
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             align-items: center;
             padding: 80px 20px;
-            background: linear-gradient(135deg, #ff6600, #e65c00); /* Dégradé entre deux tons de rouge */
+            background: linear-gradient(135deg, #ff6600, #e65c00); 
             color: #fff;
             border-radius: 15px;
             margin-bottom: 40px;
@@ -77,7 +77,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-/* Effets pour les images */
 .hero img {
     width: 100%;
     height: auto;
@@ -86,38 +85,38 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-/* Effet de zoom au survol des images */
+
 .hero img:hover {
-    transform: scale(1.05); /* Zoom léger */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
 }
 
-/* Effet de filtre pour les images */
+
 .hero img {
-    filter: brightness(90%) contrast(110%); /* Réduit la luminosité et augmente le contraste */
+    filter: brightness(90%) contrast(110%); 
     transition: filter 0.3s ease;
 }
 
-/* Lors du survol de l'image, on ajuste le filtre pour la rendre plus vive */
+
 .hero img:hover {
-    filter: brightness(100%) contrast(120%); /* Image plus lumineuse et contrastée */
+    filter: brightness(100%) contrast(120%); 
 }
 
-/* Nouvelle classe pour l'image de la deuxième image avec effets supplémentaires */
+
 .hero img.second-image {
-    width: 70%; /* Diminue la taille de l'image */
-    margin-top: 20px; /* Ajoute de l'espace au-dessus */
-    margin-bottom: 20px; /* Ajoute de l'espace en bas */
-    border-radius: 15px; /* Bordure arrondie plus marquée */
-    filter: grayscale(30%); /* Grayscale léger pour un effet doux */
+    width: 70%; 
+    margin-top: 20px; 
+    margin-bottom: 20px; /* espace en bas */
+    border-radius: 15px; /* Bordure arrondie */
+    filter: grayscale(30%); 
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effet de zoom et de luminosité au survol pour la deuxième image */
+
 .hero img.second-image:hover {
-    transform: scale(1.1); /* Zoom pour la deuxième image */
-    filter: grayscale(0%) brightness(110%); /* Rendre l'image colorée et plus lumineuse */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Ombre plus nette */
+    transform: scale(1.1); 
+    filter: grayscale(0%) brightness(110%); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
         .hero:hover {
             transform: scale(1.02);
@@ -159,11 +158,11 @@
             transform: translateY(-3px);
         }
 
-        /* Nouvelle classe pour la deuxième image */
+        
         .hero img.second-image {
             width: 521px; /* Diminue la taille de l'image */
-            margin-top: 20px; /* Ajoute de l'espace au-dessus */
-            margin-bottom: 20px; /* Ajoute de l'espace en bas */
+            margin-top: 20px; /* espace au-dessus */
+            margin-bottom: 20px;
             height: 320px;
         }
 
@@ -283,7 +282,7 @@
             font-size: 1em;
         }
         .menu-button {
-            display: none; /* Cacher par défaut */
+            display: none; 
         }
 
         .footer-content .social-icons {
@@ -349,10 +348,10 @@
     }
 
     .hero img.second-image {
-        width: 100%; /* Prend toute la largeur disponible */
-        height: auto; /* Laisse la hauteur s'adapter proportionnellement */
-        margin-top: 10px; /* Réduit l'espace au-dessus */
-        margin-bottom: 10px; /* Réduit l'espace en bas */
+        width: 100%; 
+        height: auto; 
+        margin-top: 10px; 
+        margin-bottom: 10px; 
     }
 
     .container {
@@ -360,7 +359,7 @@
         align-items: center;
     }
 
-    /* Réajustement de la barre de navigation */
+   
     nav ul {
         display: none; /* Cacher par défaut */
         width: 100%;
@@ -639,7 +638,7 @@
     </footer>
 
     <script>
-        // JavaScript pour changer l'image toutes les 5 secondes
+      
         const images = ["School.png", "School4.jpeg", "School2.jpeg"];
         let currentIndex = 0;
         const imageElement = document.getElementById("hero-image");
@@ -648,7 +647,7 @@
 
             currentIndex = (currentIndex + 1) % images.length;
             imageElement.src = images[currentIndex];
-            if (currentIndex === 1) { // Si c'est la 2e image
+            if (currentIndex === 1) { //  2e image
                 imageElement.classList.add("second-image");
             } else {
                 imageElement.classList.remove("second-image");
@@ -660,7 +659,7 @@
 
     </script>
      <script>
-        // Fonction pour activer/désactiver le menu de navigation
+       //desactiver le menu
                  
         function toggleMenu() {
             const menu = document.querySelector("nav ul");
