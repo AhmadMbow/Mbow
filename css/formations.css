@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* En-tête */
+header {
+    background-color: #1a1a1a; /* Gris foncé */
+    color: #fff;
+    padding: 10px 20px; /* Réduit la hauteur du header */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 20px; /* Réduit la taille du titre */
+}
+.menu-button {
+    display: none; /* Cacher par défaut */
+   }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+}
+
+/* Section d'en-tête des formations */
+.formations-header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ff6600, #ff9966);
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.formations-header h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.formations-header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 25px;
+    margin: 0 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
