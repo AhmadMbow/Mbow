@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations - I2SN</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/formations.css">
+    <link rel="icon" href="../images/logo.webp">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.webp" alt="Logo I2SN" id="logo">
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+                <h1>Institut Des Sciences SOULEYMANE NIANG (I2SN)</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="metiers.html">Métiers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>     
+
+
+        </div>
+    </header>
+    
+    <!-- Section des formations -->
+    <main>
+        <section class="formations-header">
+            <h2>Nos Formations</h2>
+            <p>Explorez nos différents programmes de formation pour bâtir une carrière solide dans les domaines scientifiques et techniques.</p>
+        </section>
+        
+        <!-- Formations en Licences -->
+        <section class="formation-details">
+            <div class="formation-category">
+                <h3>Licences MPCI</h3>
+                <p>Formations en Mathématiques, Physique, Chimie et Informatique, visant à préparer les étudiants aux défis scientifiques et technologiques modernes.</p>
+                <a href="licence-mpci.html" class="btn-secondary">En savoir plus</a>
+            </div>
+
+            <div class="formation-category">
+                <h3>Licence en Informatique</h3>
+                <p>Un programme complet pour former des experts en informatique avec des compétences avancées en programmation et en développement.</p>
+                <a href="licence-informatique.html" class="btn-secondary">En savoir plus</a>
+            </div>
+
+            <div class="formation-category">
+                <h3>Licence en Sciences des Données</h3>
+                <p>Prépare les étudiants à une carrière dans l'analyse de données et la gestion des systèmes de données.</p>
+                <a href="licence-sciences-des-donnees.html" class="btn-secondary">En savoir plus</a>
+            </div>
+        </section>
+
+        <!-- Licences Professionnelles -->
+        <section class="professional-licenses">
+            <h3>Licences Professionnelles</h3>
+            <ul>
+                <li>Énergies renouvelables</li>
+                <li>Instrumentation - Mesures et Contrôle Qualité</li>
+                <li>Électronique, Télécommunications et Systèmes Embarqués</li>
+                <li>Instrumentation Hospitalière et Ingénierie Biomédicale</li>
+            </ul>
+            <a href="licences-professionnelles.html" class="btn">Découvrir toutes nos licences professionnelles</a>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 I2SN. Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61570066372961"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/i2sn_school?igsh=Ynd5dzM5MDB1dWsz&utm_source=qr"><img src="images/instagram-icon.jpg" alt="instagram"></a>
+            
+        </div>
+    </footer>
+    <script>
+        // Fonction pour activer/désactiver le menu de navigation
+                 
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - I2SN</title>
+    <link rel="icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- En-tête de la page -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.webp" alt="Logo I2SN" id="logo">
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+                <h1>Institut Des Sciences SOULEYMANE NIANG (I2SN)</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="metiers.html">Métiers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Section de contact -->
+    <main>
+        <section class="contact-section">
+            <h2>Contactez-nous</h2>
+            <p>Pour toute question ou information, n'hésitez pas à nous joindre directement par téléphone, email ou via le formulaire ci-dessous :</p>
+            
+            <div class="contact-info">
+                <ul>
+                    <li><strong>Téléphone :</strong> 787032626 / 787032424 / 776486177</li>
+                    <li><strong>Email :</strong> <a href="mailto:bbmbow@gmail.com">bbmbow@gmail.com</a></li>
+                    <li><strong>Adresse :</strong> Cite Mourtada 2- VDN OUEST FOIRE- Lot 18,Dakar </li>
+                </ul>
+            </div>
+
+            <h3>Formulaire de Contact</h3>
+          <form action="php/send_mail.php" method="post" class="contact-form">
+               
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message ici..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 I2SN. Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61570066372961"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/i2sn_school?igsh=Ynd5dzM5MDB1dWsz&utm_source=qr"><img src="images/instagram-icon.jpg" alt="instagram"></a>
+        </div>
+    </footer>
+    <script>
+        // Fonction pour activer/désactiver le menu de navigation
+                 
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
