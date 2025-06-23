@@ -55,7 +55,7 @@
         }
 
         nav ul li a:hover {
-            background-color: #333;
+            
             text-decoration: none;
         }
 
@@ -250,6 +250,125 @@
     }
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Container Header */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo img {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+/* Titre */
+header h1 {
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+
+/* Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Bouton menu pour mobile */
+.menu-button {
+    display: none;
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sections principales */
+main {
+    padding: 20px;
+}
+
+section h2, section h3 {
+    color: #d4d4d4;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-button {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}
     </style>
 </head>
 <body>
