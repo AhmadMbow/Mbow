@@ -70,7 +70,7 @@
 
         .contact-section {
             text-align: center;
-            background: linear-gradient(135deg, #ff6600, #ff9966);
+            background: linear-gradient(135deg, #ff1d1d, #d17b4d);
             color: #fff;
             padding: 50px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -342,6 +342,132 @@
         to {
             transform: translateY(0);
         }
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container général */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo img {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+/* Titre */
+header h1 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Bouton menu (mobile) */
+.menu-button {
+    display: none;
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Section contact */
+.contact-section {
+    padding: 20px;
+}
+
+.contact-info ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 8px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .menu-button {
+        display: block;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .contact-section {
+        padding: 15px;
+    }
+
+    iframe {
+        height: 300px;
+    }
+
+    a[href*="wa.me"] {
+        font-size: 1em;
+        padding: 12px 20px;
+        display: block;
+        margin: auto;
+        width: fit-content;
     }
 }
 
